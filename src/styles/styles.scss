@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "bootstrap/scss/bootstrap";
+
+@import 'variables';
+@import 'mixins';
+@import 'custom';
+
+.navbar-custom {
+  background-color: #150989;
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text,
+.nav-item li a {
+  color: antiquewhite;
+}
+
+::placeholder {
+  color: $input-placeholder-color !important;
+  opacity: $input-placeholder-opacity !important;
+}
+
+::-ms-input-placeholder {
+  color: $input-placeholder-color !important;
+}
