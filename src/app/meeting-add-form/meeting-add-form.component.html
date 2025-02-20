@@ -1,0 +1,38 @@
+<h1>Schedule a Meeting</h1>
+
+<form class="form-group" (ngSubmit)="onSubmit()"#meetingForm="ngForm">
+  <div class="mb-3">
+    <div class="row g-3 align-items-center">
+      <div class="col-sm-3">
+        <label for="topic" class="form-label">Topic</label>
+        <input type="text" placeholder="Topic" id="topic" name="topic" class="form-control"
+          [(ngModel)]="meeting.topic" required/>
+      </div>
+      <div class="col-sm-3">
+        <label for="numberOfPeople" class="form-label">Number of People</label>
+        <input type="text" placeholder="0" id="numberOfPeople" name="numberOfPeople" class="form-control"
+          [(ngModel)]="meeting.numberOfPeople" required/>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="row g-3 align-items-center">
+      <div class="col-sm-3">
+        <label for="startDate" class="form-label">Start Date and Time</label>
+        <input type="datetime-local" placeholder="1" id="startDate" name="startDate" class="form-control"
+          [(ngModel)]="meeting.dateTime" required/>
+      </div>
+      <div class="col-sm-3">
+        <label for="client">Client</label>
+        <select class="form-control" id="client" name="client" [(ngModel)]="meeting.client" required>
+          <option *ngFor="let client of clients" [value]="client">{{client}}</option>
+        </select>
+
+      </div>
+
+    </div>
+  </div>
+  <button [disabled]="!meetingForm.form.valid" type="submit" class="btn btn-primary">Submit</button>
+</form>
+
